@@ -10,7 +10,6 @@ namespace RentACar.Data
         {
 
         }
-
         public DbSet<User> Users { get; set; }
         public DbSet<Car> Cars { get; set; }
     }
