@@ -124,13 +124,32 @@ namespace RentACar.Areas.Identity.Pages.Account
                     FirstName = Input.FirstName,
                     LastName = Input.LastName,
                 };
+                bool username = _userManager.Users.Any(x => x.UserName == user.UserName);
+                bool email = _userManager.Users.Any(x => x.Email == user.Email);
+                bool egn = _userManager.Users.Any(x => x.EGN == user.EGN);
+                if(username || email || egn)
+                {
+                    try
+                    {
+                        return Page();
+                    } finally
+                    {
+                        Input = new InputModel()
+                        {
+                            RoleList = _roleManager.Roles.Select(x => x.Name).Select(i => new SelectListItem
+                            {
+                                Text = i,
+                                Value = i
+                            })
+                        };
+                    }
+                }
                 var result = await _userManager.CreateAsync(user, Input.Password);
                 if (result.Succeeded)
                 {
                     _logger.LogInformation("User created a new account with password.");
-
-                    await _userManager.AddToRoleAsync(user, Input.Role);
-
+                    var res = await _userManager.AddToRoleAsync(user, Input.Role);
+                    if (!res.Succeeded) { throw new Exception(); }
                     var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);
                     code = WebEncoders.Base64UrlEncode(Encoding.UTF8.GetBytes(code));
                     var callbackUrl = Url.Page(

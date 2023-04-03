@@ -4,7 +4,6 @@ namespace RentACar.Models
 {
     public class User : IdentityUser
     {
-        public override string Id { get; set; }
         public string Password { get; set; }
         public override string UserName { get; set; }
         public string FirstName { get; set; }
