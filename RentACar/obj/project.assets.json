@@ -9315,11 +9315,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Projects\\C#\\RentACar\\RentACar\\RentACar.csproj",
+      "projectUniqueName": "C:\\Users\\vikto\\Desktop\\RentACar-master\\RentACar\\RentACar.csproj",
       "projectName": "RentACar",
-      "projectPath": "D:\\Projects\\C#\\RentACar\\RentACar\\RentACar.csproj",
+      "projectPath": "C:\\Users\\vikto\\Desktop\\RentACar-master\\RentACar\\RentACar.csproj",
       "packagesPath": "C:\\Users\\vikto\\.nuget\\packages\\",
-      "outputPath": "D:\\Projects\\C#\\RentACar\\RentACar\\obj\\",
+      "outputPath": "C:\\Users\\vikto\\Desktop\\RentACar-master\\RentACar\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\vikto\\AppData\\Roaming\\NuGet\\NuGet.Config",
